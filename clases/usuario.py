@@ -1,9 +1,11 @@
 from datetime import datetime
 
 class Usuario:
-    def __init__(self, id_usuario, nombre, email, contraseña):
+    def __init__(self, id_usuario, nombre, apellido, documento, email, contraseña):
         self.__id_usuario = id_usuario
         self.__nombre = nombre
+        self.__apellido = apellido
+        self.__documento = documento
         self.__email = email
         self.__contraseña = contraseña
         self.__fecha_alta = datetime.now()
@@ -14,6 +16,12 @@ class Usuario:
 
     def get_nombre(self):
         return self.__nombre
+    
+    def get_nombre(self):
+        return self.__apellido
+    
+    def get_nombre(self):
+        return self.__documento
 
     def get_email(self):
         return self.__email
@@ -24,6 +32,12 @@ class Usuario:
     # Setters
     def set_nombre(self, nuevo_nombre):
         self.__nombre = nuevo_nombre
+
+        def set_nombre(self, nuevo_apellido):
+        self.__nombre = nuevo_apellido
+
+        def set_nombre(self, nuevo_documento):
+        self.__nombre = nuevo_documento
 
     def set_email(self, nuevo_email):
         self.__email = nuevo_email
@@ -39,6 +53,8 @@ class Usuario:
         return {
             "id": self.__id_usuario,
             "nombre": self.__nombre,
+            "apellido": self.__apellido,
+            "documento": self.__documento,
             "email": self.__email,
             "fecha_alta": self.__fecha_alta.strftime("%Y-%m-%d %H:%M:%S")
         }
