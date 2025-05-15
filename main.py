@@ -1,6 +1,6 @@
 from clases.usuario import Usuario
 
-usuario1 = Usuario(1, "Ana López", "ana@example.com", "1234")
+usuario1 = Usuario(1, "Ana", "lopez", "12345667", "ana@example.com", "1234")
 
 print(usuario1.get_nombre())
 

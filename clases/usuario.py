@@ -33,10 +33,10 @@ class Usuario:
     def set_nombre(self, nuevo_nombre):
         self.__nombre = nuevo_nombre
 
-        def set_nombre(self, nuevo_apellido):
-        self.__nombre = nuevo_apellido
+    def set_nombre(self, nuevo_apellido):
+        self.__apellido = nuevo_apellido
 
-        def set_nombre(self, nuevo_documento):
+    def set_nombre(self, nuevo_documento):
         self.__nombre = nuevo_documento
 
     def set_email(self, nuevo_email):
