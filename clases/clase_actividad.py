@@ -36,3 +36,9 @@ class ClaseActividad:
             "instructor": self.instructor.get_nombre_completo(),
             "cupos_disponibles": self.cupos_disponibles
         }
+
+def editar_clase(self, nuevos_datos):
+    for clave, valor in nuevos_datos.items():
+        if hasattr(self, clave):
+            setattr(self, clave, valor)
+    return True
