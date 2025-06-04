@@ -109,3 +109,12 @@ for clase in clases_disponibles:
     print(clase.mostrar_info())
 
 
+usuario1 = Usuario(1, "Ana", "Lopez", ...)
+
+# Intentamos reservar en spinning
+if spinning.reservar_cupo(usuario1):
+    print(f"{usuario1.get_nombre()} reservó un cupo en {spinning.nombre}")
+else:
+    print("No hay cupos disponibles")
+
+
