@@ -1,0 +1,31 @@
+import unittest
+from clases import ClaseActividad
+
+class InstructorMock:
+    def __init__(self, nombre, apellido):
+        self.nombre = nombre
+        self.apellido = apellido
+
+    def get_nombre_completo(self):
+        return f"{self.nombre} {self.apellido}"
+
+class TestUsuarioReservaClase(unittest.TestCase):
+    def setUp(self):
+        self.instructor = InstructorMock("Ana", "Pérez")
+        self.clase = ClaseActividad(1, "Yoga", 2, "Lunes", "10:00", "11:00", self.instructor)
+
+    def test_mostrar_info(self):
+        info = self.clase.mostrar_info()
+        esperado = "Clase: Yoga | Día: Lunes | Hora: 10:00-11:00 | Instructor: Ana Pérez | Cupos disponibles: 2"
+        self.assertEqual(info, esperado)
+
+    def test_reservar_cupo(self):
+        usuario = "usuario1"
+        self.assertTrue(self.clase.reservar_cupo(usuario))
+        self.assertIn(usuario, self.clase.inscriptos)
+        self.assertEqual(self.clase.cupos_disponibles, 1)
+
+    def test_reservar_cupo_sin_disponibilidad(self):
+        self.clase.reservar_cupo("u1")
+        self.clase.reservar_cupo("u2")
+        self.assertFalse(self.clase.reservar_cupo("u3"))
